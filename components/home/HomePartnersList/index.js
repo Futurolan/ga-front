@@ -41,7 +41,7 @@ export const partners = gql`
         title
         nid
         image:fieldPartnerImage{
-          derivative(style:PARTNER_150X150){
+          derivative(style:PARTNER150X150){
             url
           }
         }
