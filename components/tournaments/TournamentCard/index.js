@@ -19,7 +19,8 @@ const TournamentCard = (props) => (
             <img
               src={props.imgMobileUrl}
               srcSet={`${props.imgDesktopUrl} 288w, ${props.imgWidescreenUrl} 352w, ${props.imgFullhdUrl} 416w, ${props.imgMobileUrl} 720w`}
-              sizes='(min-width: 1408px) 416px,(min-width: 1216px) 352px, (min-width: 769px) 288px,  100vw' />
+              sizes='(min-width: 1408px) 416px,(min-width: 1216px) 352px, (min-width: 769px) 288px,  100vw'
+            />
           </figure>
           <div className='pegi'>
             <PegiLogo pegi={props.pegi} />

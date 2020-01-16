@@ -5,7 +5,7 @@ import './styles.scss'
 
 const PartnerLogo = (props) => (
   <div className='partner-logo box has-text-centered'>
-    <a href={props.url} target='_blank'>
+    <a href={props.url} target='_blank' rel='noopener noreferrer'>
       <figure>
         <img src={props.imageUrl} alt={`Logo du partenaire ${props.title}`} />
       </figure>

@@ -14,15 +14,17 @@ function InfluencerList ({ data: { loading, error, nodeQuery } }) {
   }
 
   if (nodeQuery && nodeQuery.entities && nodeQuery.entities.length > 0) {
-    return <div className='ga-influencer-list'>
-      <div className='columns is-multiline is-6  is-variable'>
-        {nodeQuery.entities.map((influencer) => (
-          <div className='column is-3-widescreen is-6' key={influencer.nid}>
-            <InfluencerCard title={influencer.title} url={influencer.url} description={influencer.description.value} imgMobileUrl={influencer.image.mobile.url} imgDesktopUrl={influencer.image.desktop.url} imgWidescreenUrl={influencer.image.widescreen.url} imgFullhdUrl={influencer.image.fullhd.url} />
-          </div>
-        ))}
+    return (
+      <div className='ga-influencer-list'>
+        <div className='columns is-multiline is-6  is-variable'>
+          {nodeQuery.entities.map((influencer) => (
+            <div className='column is-3-widescreen is-6' key={influencer.nid}>
+              <InfluencerCard title={influencer.title} url={influencer.url} description={influencer.description.value} imgMobileUrl={influencer.image.mobile.url} imgDesktopUrl={influencer.image.desktop.url} imgWidescreenUrl={influencer.image.widescreen.url} imgFullhdUrl={influencer.image.fullhd.url} />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    )
   }
   return <div className='notification'>Chargement en cours.</div>
 }
@@ -48,16 +50,16 @@ export const influencers = gql`
         }
         url:fieldInfluencerUrl
         image:fieldInfluencerImage{
-          mobile:derivative(style:CROP_1_1_705X705){
+          mobile:derivative(style:CROP11705X705){
             url
           }
-          desktop:derivative(style:CROP_1_1_200X200){
+          desktop:derivative(style:CROP11200X200){
             url
           }
-          widescreen:derivative(style:CROP_1_1_250X250){
+          widescreen:derivative(style:CROP11250X250){
             url
           }
-          fullhd:derivative(style:CROP_1_1_300X300){
+          fullhd:derivative(style:CROP11300X300){
             url
           }
         }

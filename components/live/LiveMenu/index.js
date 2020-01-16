@@ -17,7 +17,7 @@ function LiveMenu ({ className, data: { loading, error, node } }) {
   }
 
   if (node && node.livemode) {
-    return <ActiveLink label={config.live.title} className={`ga-live-menu ${className}`} as={config.live.link} path={'/live'} />
+    return <ActiveLink label={config.live.title} className={`ga-live-menu ${className}`} as={config.live.link} path='/live' />
   } else { return null }
 }
 

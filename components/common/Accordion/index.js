@@ -21,7 +21,7 @@ class Accordion extends React.Component {
 
     return (
       <div className='ga-accordion panel'>
-        <div className='panel-heading has-background-primary' onClick={this.toggleMenu}>
+        <div className='panel-heading has-background-primary' onClick={() => this.toggleMenu()}>
           <div className='level is-mobile'>
             <div className='level-left'>
               <div className='level-item'>

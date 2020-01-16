@@ -12,6 +12,7 @@ class TwitchPlayer extends React.Component {
   componentDidMount () {
     if (this.props.active) { this.setState({ animationEnded: true }) }
   }
+
   componentDidUpdate (prevProps) {
     if (!prevProps.active) {
       if (prevProps.active !== this.props.active) {
@@ -30,22 +31,27 @@ class TwitchPlayer extends React.Component {
 
   render () {
     if (this.props.active && this.state.animationEnded) {
-      return <div data-index={this.props.index} className={`ga-twitch-player ${this.props.active ? 'enable' : 'disable'}`} style={{ background: `url('${this.props.img}') no-repeat center center` }}>
-        <iframe
-          src={`https://player.twitch.tv/?channel=${this.props.channel}`}
-          frameBorder='none'
-          scrolling='no'
-          width='100%'
-          height='100%'
-          allowFullScreen />
-      </div>
+      return (
+        <div data-index={this.props.index} className={`ga-twitch-player ${this.props.active ? 'enable' : 'disable'}`} style={{ background: `url('${this.props.img}') no-repeat center center` }}>
+          <iframe
+            src={`https://player.twitch.tv/?channel=${this.props.channel}`}
+            frameBorder='none'
+            scrolling='no'
+            width='100%'
+            height='100%'
+            allowFullScreen
+          />
+        </div>
+      )
     } else {
-      return <div data-index={this.props.index} className={`ga-twitch-player ${this.props.active ? 'enable' : 'disable'}`} style={{ background: `url('${this.props.img}') no-repeat center center` }}>
+      return (
+        <div data-index={this.props.index} className={`ga-twitch-player ${this.props.active ? 'enable' : 'disable'}`} style={{ background: `url('${this.props.img}') no-repeat center center` }}>
 
-        <p className='channel-name'>
-          <b>{this.props.channel}</b>
-        </p>
-      </div>
+          <p className='channel-name'>
+            <b>{this.props.channel}</b>
+          </p>
+        </div>
+      )
     }
   }
 }

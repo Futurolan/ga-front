@@ -16,30 +16,33 @@ function NewsList ({
   }
 
   if (nodeQuery && nodeQuery.entities && nodeQuery.entities.length > 0) {
-    return <div className='ga-news-list'>
-      <div className='columns is-multiline is-6  is-variable'>
-        {nodeQuery.entities.map((news) => (
-          <div className='column is-one-third' key={news.nid}>
-            <NewsCard
-              nid={news.nid}
-              created={news.created}
-              title={news.title}
-              url={news.url ? news.url.path : null}
-              imgMobileUrl={news.image.mobile.url}
-              imgDesktopUrl={news.image.desktop.url}
-              imgWidescreenUrl={news.image.widescreen.url}
-              imgFullhdUrl={news.image.fullhd.url}
-            />
+    return (
+      <div className='ga-news-list'>
+        <div className='columns is-multiline is-6  is-variable'>
+          {nodeQuery.entities.map((news) => (
+            <div className='column is-one-third' key={news.nid}>
+              <NewsCard
+                nid={news.nid}
+                created={news.created}
+                title={news.title}
+                url={news.url ? news.url.path : null}
+                imgMobileUrl={news.image.mobile.url}
+                imgDesktopUrl={news.image.desktop.url}
+                imgWidescreenUrl={news.image.widescreen.url}
+                imgFullhdUrl={news.image.fullhd.url}
+              />
 
-          </div>
-        ))}
-      </div>
-      { (nodeQuery.entities.length < nodeQuery.count) && <div className='has-text-centered'>
-        <button className='v-button button is-primary' onClick={() => loadMoreNews()}>
+            </div>
+          ))}
+        </div>
+        {(nodeQuery.entities.length < nodeQuery.count) &&
+          <div className='has-text-centered'>
+            <button className='v-button button is-primary' onClick={() => loadMoreNews()}>
           Charger plus d'actualités
-        </button>
-      </div>}
-    </div>
+            </button>
+          </div>}
+      </div>
+    )
   }
   return <div className='notification'>Chargement des actualités en cours.</div>
 }
@@ -72,16 +75,16 @@ query post($skip:Int!){
           path
         }
         image:fieldNewsImage{
-          mobile:derivative(style:CROP_2_1_720X360){
+          mobile:derivative(style:CROP21720X360){
             url
           }
-          desktop:derivative(style:CROP_2_1_288X144){
+          desktop:derivative(style:CROP21288X144){
             url
           }
-          widescreen:derivative(style:CROP_2_1_352X176){
+          widescreen:derivative(style:CROP21352X176){
             url
           }
-          fullhd:derivative(style:CROP_2_1_416X208){
+          fullhd:derivative(style:CROP21416X208){
             url
           }
         }

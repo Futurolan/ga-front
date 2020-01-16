@@ -13,7 +13,7 @@ const Layout = ({ name, children }) => (
   <div className={`site ${name}`}>
     <Header />
     <main className='site-content'>
-      { children }
+      {children}
     </main>
     <Footer />
   </div>

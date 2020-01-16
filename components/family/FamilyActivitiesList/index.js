@@ -14,21 +14,26 @@ function FamilyActivitiesList ({ data: { loading, error, nodeQuery } }) {
   }
 
   if (nodeQuery && nodeQuery.entities && nodeQuery.entities.length > 0 && nodeQuery.entities[0].groups) {
-    return <div className='ga-family-activities-list has-text-centered' >
-      {nodeQuery.entities[0].groups.map((group) => {
-        return <div key={group.entity.id} className='section'>
-          <h2 className='title is-size-5 has-text-weight-light is-italic'>{group.entity.name}</h2>
-
-          <div className='columns is-multiline is-vcentered is-centered '>
-            {group.entity.activities.map((activity) => {
-              return <div key={activity.entity.id} className='column is-2-desktop is-4-tablet'>
-                <FamilyActivity title={activity.entity.name} url={activity.entity.url} imageUrl={activity.entity.image.derivative.url} />
+    return (
+      <div className='ga-family-activities-list has-text-centered'>
+        {nodeQuery.entities[0].groups.map((group) => {
+          return (
+            <div key={group.entity.id} className='section'>
+              <h2 className='title is-size-5 has-text-weight-light is-italic'>{group.entity.name}</h2>
+              <div className='columns is-multiline is-vcentered is-centered '>
+                {group.entity.activities.map((activity) => {
+                  return (
+                    <div key={activity.entity.id} className='column is-2-desktop is-4-tablet'>
+                      <FamilyActivity title={activity.entity.name} url={activity.entity.url} imageUrl={activity.entity.image.derivative.url} />
+                    </div>
+                  )
+                })}
               </div>
-            })}
-          </div>
-        </div>
-      })}
-    </div>
+            </div>
+          )
+        })}
+      </div>
+    )
   }
   return <div className='notification'>Chargement des activités famille en cours.</div>
 }

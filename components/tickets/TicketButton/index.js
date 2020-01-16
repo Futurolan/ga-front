@@ -15,13 +15,15 @@ function TicketButton ({ data: { loading, error, node } }) {
   }
 
   if (node && node.url) {
-    return <div className='panel ga-ticket-button'>
-      <div className='button is-primary is-fullwidth is-large'>
-        <Link href={config.tickets.link}>
-          <a className='has-text-white'>Accéder à la billetterie</a>
-        </Link>
+    return (
+      <div className='panel ga-ticket-button'>
+        <div className='button is-primary is-fullwidth is-large'>
+          <Link href={config.tickets.link}>
+            <a className='has-text-white'>Accéder à la billetterie</a>
+          </Link>
+        </div>
       </div>
-    </div>
+    )
   } else { return null }
 }
 

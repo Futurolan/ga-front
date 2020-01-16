@@ -14,15 +14,17 @@ function ExhibitorList ({ data: { loading, error, nodeQuery } }) {
   }
 
   if (nodeQuery && nodeQuery.entities && nodeQuery.entities.length > 0) {
-    return <div className='ga-exhibitor-list'>
-      <div className='columns is-multiline is-6  is-variable'>
-        {nodeQuery.entities.map((exhibitor) => (
-          <div className='column is-12' key={exhibitor.nid}>
-            <ExhibitorCard title={exhibitor.title} description={exhibitor.description.processed} imgUrl={exhibitor.image.derivative.url} localisation={exhibitor.localisation} url={exhibitor.url} />
-          </div>
-        ))}
+    return (
+      <div className='ga-exhibitor-list'>
+        <div className='columns is-multiline is-6  is-variable'>
+          {nodeQuery.entities.map((exhibitor) => (
+            <div className='column is-12' key={exhibitor.nid}>
+              <ExhibitorCard title={exhibitor.title} description={exhibitor.description.processed} imgUrl={exhibitor.image.derivative.url} localisation={exhibitor.localisation} url={exhibitor.url} />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    )
   }
   return <div className='notification'>Chargement des exposants en cours.</div>
 }
@@ -48,7 +50,7 @@ export const exhibitors = gql`
           processed
         }
         image: fieldExhibitorImage {
-          derivative(style: EXHIBITOR_150X150) {
+          derivative(style: EXHIBITOR150X150) {
             url
           }
         }

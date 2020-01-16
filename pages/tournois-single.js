@@ -19,6 +19,7 @@ class TournoisSinglePage extends React.Component {
   _changeBg (url) {
     if (url !== this.state.bg) this.setState({ bg: url })
   }
+
   render () {
     const { nid } = this.props
     let styles = {}

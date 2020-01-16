@@ -12,6 +12,7 @@ class YoutubePlayer extends React.Component {
   componentDidMount () {
     if (this.props.active) { this.setState({ animationEnded: true }) }
   }
+
   componentDidUpdate (prevProps) {
     if (!prevProps.active) {
       if (prevProps.active !== this.props.active) {
@@ -30,23 +31,28 @@ class YoutubePlayer extends React.Component {
 
   render () {
     if (this.props.active && this.state.animationEnded) {
-      return <div data-index={this.props.index} className={`ga-youtube-player ${this.props.active ? 'enable' : 'disable'}`} style={{ background: `url('${this.props.img}') no-repeat center center` }}>
-        <iframe
-          src={`https://www.youtube.com/embed/${this.props.channel}`}
-          frameBorder='none'
-          scrolling='no'
-          width='100%'
-          height='100%'
-          allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
-          allowFullScreen />
-      </div>
+      return (
+        <div data-index={this.props.index} className={`ga-youtube-player ${this.props.active ? 'enable' : 'disable'}`} style={{ background: `url('${this.props.img}') no-repeat center center` }}>
+          <iframe
+            src={`https://www.youtube.com/embed/${this.props.channel}`}
+            frameBorder='none'
+            scrolling='no'
+            width='100%'
+            height='100%'
+            allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+            allowFullScreen
+          />
+        </div>
+      )
     } else {
-      return <div data-index={this.props.index} className={`ga-youtube-player ${this.props.active ? 'enable' : 'disable'}`} style={{ background: `url('${this.props.img}') no-repeat center center` }}>
+      return (
+        <div data-index={this.props.index} className={`ga-youtube-player ${this.props.active ? 'enable' : 'disable'}`} style={{ background: `url('${this.props.img}') no-repeat center center` }}>
 
-        <p className='channel-name'>
-          <b>{this.props.channel}</b>
-        </p>
-      </div>
+          <p className='channel-name'>
+            <b>{this.props.channel}</b>
+          </p>
+        </div>
+      )
     }
   }
 }

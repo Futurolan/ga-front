@@ -10,7 +10,7 @@ class TournamentType extends React.Component {
     }
 
     return (
-      <span className='ga-tournament-type' >{map[type] ? map[type] : type}</span>
+      <span className='ga-tournament-type'>{map[type] ? map[type] : type}</span>
     )
   }
 }

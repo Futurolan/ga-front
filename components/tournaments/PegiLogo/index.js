@@ -14,7 +14,7 @@ class PegiLogo extends React.Component {
 
     if (map[pegi]) {
       return (
-        <img className='ga-pegi-logo' alt={`Logo PEGI ${pegi}`} src={require(`../../../static/img/pegi/${map[pegi]}`)} />
+        <img className='ga-pegi-logo' alt={`Logo PEGI ${pegi}`} src={require(`../../../public/static/img/pegi/${map[pegi]}`)} />
       )
     } else {
       return null

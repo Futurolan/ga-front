@@ -5,7 +5,7 @@ import './styles.scss'
 
 const FamilyActivity = (props) => (
   <div className='family-activity box has-text-centered'>
-    <a href={props.url} target='_blank'>
+    <a href={props.url} target='_blank' rel='noopener noreferrer'>
       <figure>
         <img src={props.imageUrl} alt={`Logo de l'activité ${props.title}`} />
       </figure>

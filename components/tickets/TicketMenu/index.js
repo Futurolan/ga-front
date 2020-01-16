@@ -17,7 +17,7 @@ function TicketMenu ({ className, data: { loading, error, node } }) {
   }
 
   if (node && node.url) {
-    return <ActiveLink label={config.tickets.title} className={`ga-ticket-menu ${className}`} as={config.tickets.link} path={'/tickets'} />
+    return <ActiveLink label={config.tickets.title} className={`ga-ticket-menu ${className}`} as={config.tickets.link} path='/tickets' />
   } else { return null }
 }
 

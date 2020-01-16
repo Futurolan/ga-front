@@ -18,7 +18,7 @@ class Platform extends React.Component {
       )
     } else {
       return (
-        <span className='ga-platform' >{map[platform] ? map[platform] : platform}</span>
+        <span className='ga-platform'>{map[platform] ? map[platform] : platform}</span>
       )
     }
   }

@@ -17,7 +17,7 @@ class GameType extends React.Component {
     }
 
     return (
-      <span className='ga-game-type' >{map[type] ? map[type] : type}</span>
+      <span className='ga-game-type'>{map[type] ? map[type] : type}</span>
     )
   }
 }

@@ -5,7 +5,7 @@ import './styles.scss'
 
 const Hero = (props) => (
   <section className='ga-hero'>
-    <div className={`hero is-large has-text-centered`} style={{ background: `url('${props.imgUrl}') no-repeat center center` }}>
+    <div className='hero is-large has-text-centered' style={{ background: `url('${props.imgUrl}') no-repeat center center` }}>
       <div className='hero-body'>
         <div className='container'>
           <h1 className='title is-size-1 has-text-white is-uppercase'>{props.title}</h1>

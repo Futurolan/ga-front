@@ -37,13 +37,17 @@ class PartnerCarousel extends React.Component {
 
   render () {
     const { partners } = this.state
-    return <div className='ga-partner-carousel columns is-vcentered is-centered'>
-      {partners.map((partner) => {
-        return <div key={partner.nid} className='column is-2'>
-          <PartnerLogo title={partner.title} imageUrl={partner.image.derivative.url} url={partner.url} />
-        </div>
-      })}
-    </div>
+    return (
+      <div className='ga-partner-carousel columns is-vcentered is-centered'>
+        {partners.map((partner) => {
+          return (
+            <div key={partner.nid} className='column is-2'>
+              <PartnerLogo title={partner.title} imageUrl={partner.image.derivative.url} url={partner.url} />
+            </div>
+          )
+        })}
+      </div>
+    )
   }
 }
 

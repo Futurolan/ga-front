@@ -13,12 +13,14 @@ function HomePartnersList ({ data: { loading, error, nodeQuery } }) {
   }
 
   if (nodeQuery && nodeQuery.entities && nodeQuery.entities.length > 0) {
-    return <div className='ga-home-partners-list' >
-      <section className='section'>
-        <h2 className='title title-line has-text-centered is-size-5 is-uppercase'><span >Partenaires</span></h2>
-        <PartnerCarousel partners={nodeQuery.entities} />
-      </section>
-    </div>
+    return (
+      <div className='ga-home-partners-list'>
+        <section className='section'>
+          <h2 className='title title-line has-text-centered is-size-5 is-uppercase'><span>Partenaires</span></h2>
+          <PartnerCarousel partners={nodeQuery.entities} />
+        </section>
+      </div>
+    )
   }
   return <div className='notification'>Chargement des partenaires en cours.</div>
 }

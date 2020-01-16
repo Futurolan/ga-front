@@ -5,7 +5,8 @@ const menu = [
   // { type: 'page', title: 'Pass\'Bar', id: 2822, link: '/passbar' },
   { type: 'external', title: 'ESL Pro League', link: 'https://pro.eslgaming.com/occitanie/' },
   { type: 'config', id: 'tournaments' },
-  { type: 'nolink',
+  {
+    type: 'nolink',
     title: 'Infos',
     children: [
       { type: 'config', id: 'info' },
@@ -18,7 +19,8 @@ const menu = [
       // { type: 'page', title: 'Une page', id: 1246, link: '/grand-poitiers' },
       { type: 'page', title: 'Cosplay', id: 2673, link: '/cosplay' }
       // { type: 'page', title: 'Les Offs', id: 2727, link: '/offs' }
-    ] },
+    ]
+  },
   { type: 'config', id: 'partners' }
 ]
 

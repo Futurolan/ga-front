@@ -19,7 +19,7 @@ class RecrutementPage extends React.Component {
           <div className='container has-text-centered'>
             <div className='content'>
               <p>
-                <a className='button is-primary' target='_blank' href={config.recruit.formUrl}>Voir le formulaire dans un nouvel onglet</a>
+                <a className='button is-primary' target='_blank' rel='noopener noreferrer' href={config.recruit.formUrl}>Voir le formulaire dans un nouvel onglet</a>
               </p>
               <iframe frameBorder='0' height='1750' src={config.recruit.formUrl} width='100%'>Chargement en cours...</iframe>
             </div>

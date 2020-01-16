@@ -27,8 +27,8 @@ class StreamCarousel extends React.Component {
 
   refreshChannelList () {
     if (this.twitchStreams && this.youtubeStreams) {
-      let streamsOnline = {}
-      for (let streamId in this.props.streams) {
+      const streamsOnline = {}
+      for (const streamId in this.props.streams) {
         const stream = this.props.streams[streamId].stream
         if (stream.front && stream.type.id === 'stream_twitch' && this.twitchStreams[stream.id].online) {
           streamsOnline[stream.id] = stream.type.id
@@ -51,11 +51,11 @@ class StreamCarousel extends React.Component {
     // connect to WS server and listen event
     const socket = io(publicRuntimeConfig.SOCKET_URL)
 
-    socket.on(`twitchStreams`, (streams) => {
+    socket.on('twitchStreams', (streams) => {
       this.twitchStreams = streams
       this.refreshChannelList()
     })
-    socket.on(`youtubeStreams`, (streams) => {
+    socket.on('youtubeStreams', (streams) => {
       this.youtubeStreams = streams
       this.refreshChannelList()
     })
@@ -68,7 +68,7 @@ class StreamCarousel extends React.Component {
   }
 
   buildList () {
-    let channelList = []
+    const channelList = []
     for (let i = 0; i < 7; i++) {
       if (this.state.current >= 0) {
         channelList.push(this.state.channelList[(i + this.state.current) % this.state.channelList.length])
@@ -77,17 +77,19 @@ class StreamCarousel extends React.Component {
       }
     }
     return channelList.map((channel, index) => {
-      return <div onClick={this.handleItemClick} key={`item-${index + this.state.current}`} className={`ga-stream-carousel-player-item item-${index}`}>
-
-        {this.state.streamsOnline[channel] === 'stream_twitch' && <TwitchPlayer active={index === 3} index={index} img={`https://static-cdn.jtvnw.net/previews-ttv/live_user_${channel}-640x360.jpg`} channel={channel} />}
-        {this.state.streamsOnline[channel] === 'stream_youtube' && <YoutubePlayer active={index === 3} index={index} img={`https://i.ytimg.com/vi/${channel}/sddefault_live.jpg`} channel={channel} />}
-      </div>
+      return (
+        <div onClick={this.handleItemClick} key={`item-${index + this.state.current}`} className={`ga-stream-carousel-player-item item-${index}`}>
+          {this.state.streamsOnline[channel] === 'stream_twitch' && <TwitchPlayer active={index === 3} index={index} img={`https://static-cdn.jtvnw.net/previews-ttv/live_user_${channel}-640x360.jpg`} channel={channel} />}
+          {this.state.streamsOnline[channel] === 'stream_youtube' && <YoutubePlayer active={index === 3} index={index} img={`https://i.ytimg.com/vi/${channel}/sddefault_live.jpg`} channel={channel} />}
+        </div>
+      )
     })
   }
 
   handleNextClick () {
     this.setState({ current: this.state.current + 1 })
   }
+
   handlePreviousClick () {
     this.setState({ current: this.state.current - 1 })
   }
@@ -97,22 +99,25 @@ class StreamCarousel extends React.Component {
 
     this.setState({ current: current })
   }
+
   render () {
     if (this.state.channelList.length > 0) {
-      return <div className='ga-stream-carousel'>
-        <div className={`ga-stream-carousel-content ${this.state.channelList.length < 5 ? 'is-single' : ''}`}>
-          {this.buildList()}
-          {this.state.channelList.length >= 2 && <div className='next' onClick={this.handleNextClick}><i className='fas fa-angle-right' /></div>}
-          {this.state.channelList.length >= 2 && <div className='previous' onClick={this.handlePreviousClick}><i className='fas fa-angle-left' /></div>}
-        </div>
-        <div className='ga-stream-carousel-button has-text-centered'>
-          <Link href={config.live.link}>
-            <a className='button is-primary is-medium'>
+      return (
+        <div className='ga-stream-carousel'>
+          <div className={`ga-stream-carousel-content ${this.state.channelList.length < 5 ? 'is-single' : ''}`}>
+            {this.buildList()}
+            {this.state.channelList.length >= 2 && <div className='next' onClick={this.handleNextClick}><i className='fas fa-angle-right' /></div>}
+            {this.state.channelList.length >= 2 && <div className='previous' onClick={this.handlePreviousClick}><i className='fas fa-angle-left' /></div>}
+          </div>
+          <div className='ga-stream-carousel-button has-text-centered'>
+            <Link href={config.live.link}>
+              <a className='button is-primary is-medium'>
               Voir la page live
-            </a>
-          </Link>
+              </a>
+            </Link>
+          </div>
         </div>
-      </div>
+      )
     } else {
       return null
     }

@@ -18,6 +18,7 @@ class ScheduleResponsiveSwitch extends React.Component {
     window.addEventListener('resize', this.handleResize)
     this.handleResize()
   }
+
   componentWillUnmount () {
     window.removeEventListener('resize', this.handleResize)
   }
