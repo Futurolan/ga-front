@@ -11,15 +11,15 @@ steps:
       repo: futurolan/ga-front
       tags: latest
   - name: update
-      image: appleboy/drone-ssh
-      settings:
-        host: 192.168.1.8
-        username: root
-        port: 22
-        key:
-          from_secret: ssh_key
-        script:
-          - bash /root/ga/update.sh ${DRONE_REPO_NAME}
+    image: appleboy/drone-ssh
+    settings:
+      host: 192.168.1.8
+      username: root
+      port: 22
+      key:
+        from_secret: ssh_key
+      script:
+        - bash /root/ga/update.sh ${DRONE_REPO_NAME}
   - name: discord notification
     image: appleboy/drone-discored
     settings:
