@@ -21,7 +21,7 @@ steps:
       script:
         - bash /root/ga/update.sh ${DRONE_REPO_NAME}
   - name: discord notification
-    image: appleboy/drone-discored
+    image: appleboy/drone-discord
     settings:
       webhook_id: 667736502884761610
       webhook_token: WDGGDXRTJAZ1RTUsZrWNSUeVarc_AJnS8M62pC6m81-5ZSqjx_yVOy30VgobORQrGXXV
