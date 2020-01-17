@@ -1,0 +1,23 @@
+kind: pipeline
+name: default
+steps:
+  - name: docker
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      repo: futurolan/ga-front
+      tags: latest
+    when:
+      branch:
+        - master
+  - name: update
+    commands:
+      - bash /root/ga/update.sh
+  - name: discord notification
+    image: appleboy/drone-discored
+    settings:
+      webhook_id: 667736502884761610
+      webhook_token: WDGGDXRTJAZ1RTUsZrWNSUeVarc_AJnS8M62pC6m81-5ZSqjx_yVOy30VgobORQrGXXV
