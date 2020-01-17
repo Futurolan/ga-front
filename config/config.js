@@ -1,30 +1,30 @@
 const config = {
-  title: 'Gamers Assembly : Dev Front',
-  logo: '/static/img/logo-orange-100x100.png',
-  description: 'Retrouvez la Gamers Assembly prochainement',
-  metaImagePath: '/static/img/logo-orange-200x200.png',
-  gaTrackingId: 'UA-0000000-0',
+  title: 'Gamers Assembly 2020',
+  logo: '/static/img/logo.png',
+  description: 'Retrouvez la Gamers Assembly 2020 du 10 au 13 avril 2020 pour une 21e édition de folie !',
+  metaImagePath: '/static/img/logo.png',
+  gaTrackingId: 'UA-128777022-8',
   mainPartner: {
-    logo: '/static/img/charente-maritime.png',
-    url: 'https://bmagic.fr'
+    logo: '/static/img/logo_gp.png',
+    url: 'https://www.grandpoitiers.fr/'
   },
   home: {
-    hero: {
-      title: 'Gamers Assembly',
-      subtitle: 'Dev Front',
-      background: '/static/img/bg-blue-area.jpg'
-    },
-    banner: '/static/img/bg-banner-al2018.jpg',
+    banner: '/static/img/banner.png',
+    // hero: {
+    //   background: '/static/img/bg-grey-area.jpg',
+    //   title: 'Gamers Assembly',
+    //   subtitle: 'Edition 2020'
+    // },
     twitterAccount: 'GamersAssembly',
     partners: {
-      active: true,
+      active: false,
       delay: 10,
-      count: 6
+      count: 4
     }
   },
   news: {
     title: 'Actualités',
-    description: 'Retrouvez toutes les actualités de la Gamers Assembly',
+    description: 'Retrouvez toutes les actualités de la Gamers Assembly 2020',
     link: '/news'
   },
   partners: {
@@ -34,17 +34,17 @@ const config = {
   },
   tournaments: {
     title: 'Tournois',
-    description: 'Tous les tournois de la Gamers Assembly',
+    description: 'Tous les tournois de la Gamers Assembly 2020',
     link: '/tournois'
   },
   info: {
     title: 'Venir à la GA',
-    description: 'Toutes les informations sur cet évènement',
+    description: 'Toutes les informations sur la Gamers Assembly 2020',
     link: '/infos'
   },
   schedule: {
     title: 'Programme',
-    description: 'Le programme heure par heure pour tout l\'évènement',
+    description: 'Le programme heure par heure',
     link: '/schedule'
   },
   live: {
@@ -54,7 +54,7 @@ const config = {
   },
   tickets: {
     title: 'Billetterie',
-    description: 'Achetez vos places pour la Gamers Assembly',
+    description: 'Achetez vos places pour la Gamers Assembly 2020',
     link: '/billetterie',
     pass: {
       title: 'Pass "Manager/Accompagnateur"',
@@ -78,9 +78,9 @@ const config = {
     link: '/exposants'
   },
   family: {
-    title: 'Espace Famille',
+    title: 'Espace Familles',
     description: 'Les activités à faire en famille durant la Gamers Assembly',
-    link: '/espace-famille'
+    link: '/espace-familles'
   },
   influencers: {
     title: 'VIPs',
@@ -92,7 +92,7 @@ const config = {
     pageId: 6
   },
   press: {
-    active: true,
+    active: false,
     pageId: 7
   },
   legals: {
@@ -100,17 +100,17 @@ const config = {
     pageId: 8
   },
   recruit: {
-    active: true,
+    active: false,
     title: 'Recrutement',
-    description: 'Devenir bénévole pour la GAMERS ASSEMBLY, c\'est par ici !!!',
-    formUrl: 'https://goo.gl/forms/84pHQfSp50RcuUel2'
+    description: 'Devenir bénévole pour la Gamers Assembly, c\'est par ici !!!',
+    formUrl: 'https://goo.gl/forms/xMUWgVAxaTTVNDbu1'
   },
   social: {
     twitter: 'https://twitter.com/GamersAssembly',
     facebook: 'https://www.facebook.com/GamersAssembly',
-    twitch: 'https://www.flickr.com/photos/futurolan',
-    youtube: 'https://twitch.tv/gamers_assembly',
-    flickr: 'https://www.youtube.com/channel/UCbfhRIAsc4xdRACnDUwRfRw',
+    twitch: 'https://twitch.tv/gamers_assembly',
+    youtube: 'https://www.youtube.com/channel/UCbfhRIAsc4xdRACnDUwRfRw',
+    flickr: 'https://www.flickr.com/photos/futurolan',
     discord: 'https://discordapp.com/invite/gamersassembly'
   }
 }
