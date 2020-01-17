@@ -111,7 +111,8 @@ const config = {
     twitch: 'https://twitch.tv/gamers_assembly',
     youtube: 'https://www.youtube.com/channel/UCbfhRIAsc4xdRACnDUwRfRw',
     flickr: 'https://www.flickr.com/photos/futurolan',
-    discord: 'https://discordapp.com/invite/gamersassembly'
+    discord: 'https://discordapp.com/invite/gamersassembly',
+    instagram: 'https://www.instagram.com/gamers_assembly/'
   }
 }
 

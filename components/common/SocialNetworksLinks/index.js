@@ -34,6 +34,10 @@ class SocialNetworksLinks extends React.Component {
               <a className='control has-text-white' target='_blank' rel='noopener noreferrer' href={config.social.youtube}>
                 <i className='fab fa-youtube' />
               </a>}
+            {config.social.instagram &&
+              <a className='control has-text-white' target='_blank' rel='noopener noreferrer' href={config.social.instagram}>
+                <i className='fab fa-instagram' />
+              </a>}
           </div>
         </div>
       )
