@@ -15,7 +15,7 @@ steps:
         - master
   - name: update
     commands:
-      - bash /root/ga/update.sh
+      - bash /root/ga/update.sh ${DRONE_REPO_NAME}
   - name: discord notification
     image: appleboy/drone-discored
     settings:
