@@ -12,7 +12,7 @@ const config = {
     banner: '/static/img/banner.png',
     hero: {
       background: '/static/img/bg-grey-area.jpg',
-      backgroundVideo: 'https://www.esl-one.com/csgo/cologne/wp-content/uploads/2019/09/bg_clip_cologne20.mp4',
+      backgroundVideo: 'https://temp.gamers-assembly.net/ga2018.mp4',
       logo: '/static/img/logo.png',
       title: 'Gamers Assembly',
       subtitle: 'Edition 2020'
