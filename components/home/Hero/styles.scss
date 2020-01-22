@@ -1,3 +1,5 @@
+@import '../../../node_modules/bulma/sass/utilities/all';
+
 .hero{
   background-attachment: fixed!important;
   background-size:cover!important;
@@ -7,13 +9,17 @@
   }
 
   .video-background{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    max-width: none;
-    z-index: 0;
+    display: none;
+    @include  tablet{
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      max-width: none;
+      z-index: 0;
+    }
   }
 }
 
