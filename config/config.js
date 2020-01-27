@@ -94,15 +94,15 @@ const config = {
     pageId: 6
   },
   press: {
-    active: false,
-    pageId: 7
+    active: true,
+    pageId: 199518
   },
   legals: {
     active: true,
     pageId: 8
   },
   recruit: {
-    active: false,
+    active: true,
     title: 'Recrutement',
     description: 'Devenir bénévole pour la Gamers Assembly, c\'est par ici !!!',
     formUrl: 'https://goo.gl/forms/xMUWgVAxaTTVNDbu1'
