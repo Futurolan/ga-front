@@ -10,14 +10,14 @@ import config from 'config/config'
 
 const { publicRuntimeConfig } = getConfig()
 
-function LiveMenu ({ className, color, data: { loading, error, node } }) {
+function LiveMenu ({ className, color, backgroundColor, data: { loading, error, node } }) {
   if (error) {
     console.log(error)
     return null
   }
 
   if (node && node.livemode) {
-    return <ActiveLink label={config.live.title} color={color} className={`ga-live-menu ${className}`} as={config.live.link} path='/live' />
+    return <ActiveLink label={config.live.title} color={color} backgroundColor={backgroundColor} className={`ga-live-menu ${className}`} as={config.live.link} path='/live' />
   } else { return null }
 }
 
@@ -34,7 +34,8 @@ query{
 LiveMenu.propTypes = {
   data: PropTypes.object,
   className: PropTypes.string,
-  color: PropTypes.string
+  color: PropTypes.string,
+  backgroundColor: PropTypes.string
 }
 
 export default graphql(edition)(LiveMenu)
