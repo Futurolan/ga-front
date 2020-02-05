@@ -58,6 +58,7 @@ const config = {
     title: 'Billetterie',
     description: 'Achetez vos places pour la Gamers Assembly 2020',
     link: '/billetterie',
+    notification: '<strong>ATTENTION !</strong><br />Jusqu\'au 11 mars, profitez d\'une réduction de 10 € par place joueur avec le code de réduction <strong>#GA2020</strong><br />  (NE PAS OUBLIER dès le début de l\'inscription, à l\'étape 1)',
     pass: {
       title: 'Pass "Manager/Accompagnateur"',
       text: 'Pour obtenir des pass "Manager/Accompagnateur", les équipes inscrites aux tournois peuvent réaliser une demande via le lien ci-dessous.',
@@ -73,6 +74,12 @@ const config = {
       text: 'L\'acquisition d\'un ticket entraîne l\'adhésion au règlement intérieur disponible ci-dessous.',
       button: 'Télécharger le règlement intérieur (format pdf)'
     }
+  },
+  staticTickets: {
+    title: 'Billetterie',
+    iframeUrl: 'https://www.weezevent.com/widget_billeterie.php?id_evenement=583841&lg_billetterie=1&code=37023&width_auto=1&v=2&jsintegration=1',
+    description: 'Achetez vos places pour la Gamers Assembly 2020',
+    link: '/visiteurs'
   },
   exhibitors: {
     title: 'Exposants',

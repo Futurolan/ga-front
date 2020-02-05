@@ -26,6 +26,7 @@ function TicketContent ({ data: { loading, error, node } }) {
         <h1 className='title title-line has-text-centered'><span>{config.tickets.title}</span></h1>
         <div className='columns is-multiline'>
           <div className='column is-12 is-8-desktop'>
+            {config.tickets.notification && <div className='notification is-warning' dangerouslySetInnerHTML={{ __html: config.tickets.notification }} />}
             <div className='box '>
               <WeezeventIframe id={node.weezeventId} url={node.url} />
             </div>

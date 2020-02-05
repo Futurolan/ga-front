@@ -150,7 +150,7 @@ app.prepare()
             for (const index in result.data.tournaments.entities) {
               const entity = result.data.tournaments.entities[index]
               if (req.url.indexOf(entity.url.path) === 0) {
-                return app.render(req, res, `/tournois-single`, { nid: entity.id })
+                return app.render(req, res, '/tournois-single', { nid: entity.id })
               }
             }
             return handle(req, res)
@@ -172,7 +172,7 @@ app.prepare()
             for (const index in result.data.news.entities) {
               const entity = result.data.news.entities[index]
               if (req.url.indexOf(entity.url.path) === 0) {
-                return app.render(req, res, `/news-single`, { nid: entity.id })
+                return app.render(req, res, '/news-single', { nid: entity.id })
               }
             }
             return handle(req, res)
@@ -185,7 +185,7 @@ app.prepare()
       for (const index in flatMenu) {
         const item = flatMenu[index]
         if (item.type === 'page' && item.id !== undefined && item.link !== undefined && req.url.indexOf(item.link) === 0) {
-          return app.render(req, res, `/page`, { nid: item.id })
+          return app.render(req, res, '/page', { nid: item.id })
         }
         if (item.type === 'config' && item.id !== undefined && config[item.id] !== undefined && config[item.id].link !== undefined && req.url.indexOf(config[item.id].link) === 0) {
           return app.render(req, res, `/${item.id}`)
