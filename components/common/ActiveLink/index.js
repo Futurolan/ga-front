@@ -11,7 +11,7 @@ class ActiveLink extends React.Component {
 
     return (
       <Link href={path} as={as}>
-        <a className={classNames(className, { 'has-text-grey-lighter': pathname === path })} style={{ 'background-color': `${color || 'transparent'}` }}>{label}</a>
+        <a className={classNames(className, { 'has-text-grey-lighter': pathname === path })} style={{ backgroundColor: `${color || 'transparent'}` }}>{label}</a>
       </Link>
     )
   }
