@@ -10,6 +10,10 @@ steps:
         from_secret: docker_password
       repo: futurolan/${DRONE_REPO_NAME}
       tags: latest
+    when:
+      branch:
+        include:
+          - master
   - name: update
     image: appleboy/drone-ssh
     settings:
@@ -20,9 +24,17 @@ steps:
         from_secret: ssh_key
       script:
         - bash /root/ga/update.sh ${DRONE_REPO_NAME}
+    when:
+      branch:
+        include:
+          - master
   - name: discord notification
     image: appleboy/drone-discord
     settings:
       webhook_id: 667736502884761610
       webhook_token: WDGGDXRTJAZ1RTUsZrWNSUeVarc_AJnS8M62pC6m81-5ZSqjx_yVOy30VgobORQrGXXV
       message: Le front ${DRONE_REPO_NAME} est déployé.
+    when:
+      branch:
+        include:
+          - master
