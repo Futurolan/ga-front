@@ -112,7 +112,7 @@ class StreamCarousel extends React.Component {
           <div className='ga-stream-carousel-button has-text-centered'>
             <Link href={config.live.link}>
               <a className='button is-primary is-medium'>
-              Voir la page live
+                Voir la page live
               </a>
             </Link>
           </div>
