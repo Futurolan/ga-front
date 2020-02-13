@@ -4,7 +4,7 @@ const menu = [
   { type: 'config', id: 'tickets' },
   { type: 'config', id: 'staticTickets' },
   // { type: 'page', title: 'Pass\'Bar', id: 2822, link: '/passbar' },
-  { type: 'external', title: 'ESL Pro League', color: '#000000', backgroundColor: '#FF0000', link: 'https://pro.eslgaming.com/occitanie/' },
+  { type: 'external', title: 'ESL Pro League', color: '#FFFF00', backgroundColor: '#FF0000', link: 'https://pro.eslgaming.com/occitanie/' },
   { type: 'config', id: 'tournaments' },
   {
     type: 'nolink',

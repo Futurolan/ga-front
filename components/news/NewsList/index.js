@@ -38,7 +38,7 @@ function NewsList ({
         {(nodeQuery.entities.length < nodeQuery.count) &&
           <div className='has-text-centered'>
             <button className='v-button button is-primary' onClick={() => loadMoreNews()}>
-          Charger plus d'actualités
+              Charger plus d'actualités
             </button>
           </div>}
       </div>
