@@ -24,11 +24,11 @@ function PageContent ({ data: { loading, error, node } }) {
         <Meta title={node.title} description={node.description} />
 
         <h1 className='title title-line has-text-centered'><span>{node.title}</span></h1>
-
-        <div className='content has-text-justified'>
-          <div dangerouslySetInnerHTML={{ __html: processedContent }} />
+        <div className='box'>
+          <div className='content has-text-justified'>
+            <div dangerouslySetInnerHTML={{ __html: processedContent }} />
+          </div>
         </div>
-
       </div>
     )
   }
