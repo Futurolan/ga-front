@@ -28,11 +28,18 @@ class Header extends React.Component {
     return (
       <div key={index} className='navbar-item has-dropdown is-hoverable'>
         {component}
-        <div className='navbar-dropdown'>
-          {item.children.map((item, index) => {
-            return this.generateMenuItem(item, index)
-          })}
-        </div>
+        {item.backgroundColor &&
+          <div className='navbar-dropdown' style={{ backgroundColor: `${item.backgroundColor}` }}>
+            {item.children.map((item, index) => {
+              return this.generateMenuItem(item, index)
+            })}
+          </div>}
+        {!item.backgroundColor &&
+          <div className='navbar-dropdown'>
+            {item.children.map((item, index) => {
+              return this.generateMenuItem(item, index)
+            })}
+          </div>}
       </div>
     )
   }
