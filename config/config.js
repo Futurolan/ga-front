@@ -102,7 +102,7 @@ const config = {
   },
   press: {
     active: true,
-    pageId: 199518
+    pageId: 199937
   },
   legals: {
     active: true,
