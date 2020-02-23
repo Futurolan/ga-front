@@ -32,7 +32,7 @@ function TournamentContent ({ changeBg, data: { loading, error, node } }) {
 
         {node.bgSponsor ? (
           <h1 className='title title-line has-text-centered has-text-white'><span>{node.title}</span></h1>
-        ) : ( 
+        ) : (
           <h1 className='title title-line has-text-centered'><span>{node.title}</span></h1>
         )}
         <div className='ga-tournament-content-image'>
