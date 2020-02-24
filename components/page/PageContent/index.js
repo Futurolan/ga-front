@@ -3,6 +3,7 @@ import { graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import PropTypes from 'prop-types'
 import getConfig from 'next/config'
+import InnerHTML from 'dangerously-set-html-content'
 
 import Meta from 'components/common/Meta'
 
@@ -26,7 +27,7 @@ function PageContent ({ data: { loading, error, node } }) {
         <h1 className='title title-line has-text-centered'><span>{node.title}</span></h1>
         <div className='box'>
           <div className='content has-text-justified'>
-            <div dangerouslySetInnerHTML={{ __html: processedContent }} />
+            <InnerHTML html={processedContent} />
           </div>
         </div>
       </div>
