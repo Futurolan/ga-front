@@ -6,7 +6,7 @@ import './styles.scss'
 const Hero = (props) => (
   <section className='ga-hero'>
     <div className='hero is-fullheight-with-navbar has-text-centered' style={{ background: `url('${props.imgUrl}') no-repeat center center` }}>
-      <video autoPlay loop muted poster={props.imgUrl} className='video-background is-fullheight-with-navbar'>
+      <video autoPlay loop muted className='video-background is-fullheight-with-navbar'>
         <source src={props.videoUrl} />
       </video>
       <div className='hero-body'>
