@@ -22,6 +22,7 @@
     "bulma-ribbon": "0.1.1",
     "classnames": "^2.2.6",
     "cssnano": "^4.1.10",
+    "dangerously-set-html-content": "^1.0.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "graphql": "^14.6.0",

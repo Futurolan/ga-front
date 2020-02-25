@@ -70,6 +70,7 @@ export const partnerCategories = gql`
       {field:"status",value:["1"]}
     ]},
   sort:[{field:"field_weight",direction:ASC}],
+  limit:999
   ) {
     entities{
       ... on NodePartnerCategory{

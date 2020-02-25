@@ -30,7 +30,11 @@ function TournamentContent ({ changeBg, data: { loading, error, node } }) {
       <div className='ga-tournament-content'>
         <Meta title={node.title} image={node.image ? node.image.fullhd.url : node.game.node.image.fullhd.url} description={`Toutes les informations relatives au tournoi ${node.title}`} />
 
-        <h1 className='title title-line has-text-centered'><span>{node.title}</span></h1>
+        {node.bgSponsor ? (
+          <h1 className='title title-line has-text-centered has-text-white'><span>{node.title}</span></h1>
+        ) : (
+          <h1 className='title title-line has-text-centered'><span>{node.title}</span></h1>
+        )}
         <div className='ga-tournament-content-image'>
           <figure className='image is-5by1'>
             <img alt={`Image du tournoi ${node.title}`} src={node.image ? node.image.mobile.url : node.game.node.image.mobile.url} srcSet={`${node.image ? node.image.mobile.url : node.game.node.image.mobile.url} 705w, ${node.image ? node.image.desktop.url : node.game.node.image.desktop.url} 960w, ${node.image ? node.image.widescreen.url : node.game.node.image.widescreen.url} 1155w, ${node.image ? node.image.fullhd.url : node.game.node.image.fullhd.url} 1345w`} />

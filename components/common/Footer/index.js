@@ -14,7 +14,7 @@ class Footer extends React.Component {
         <div className='container'>
           <div className='content ga-footer-links has-text-centered'>
             {config.contact.active && <ActiveLink className='has-text-white' label='Contacts' path='/contacts' />}
-            {config.press.active && <ActiveLink className='has-text-white' label='Accreditation Presse' path='/espace-presse' />}
+            {config.press.active && <ActiveLink className='has-text-white' label='Espace Presse' path='/espace-presse' />}
             {config.legals.active && <ActiveLink className='has-text-white' label='Mentions Légales ' path='/mentions-legales' />}
             {config.recruit.active && <ActiveLink className='has-text-white' label='Recrutement' path='/recrutement' />}
           </div>
