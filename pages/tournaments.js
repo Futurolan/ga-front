@@ -14,6 +14,7 @@ class TournoisPage extends React.Component {
           <Meta title={config.tournaments.title} description={config.tournaments.description} />
           <div className='container'>
             <h1 className='title title-line has-text-centered'><span>{config.tournaments.title}</span></h1>
+            {config.tournaments.notification && <div className='notification' dangerouslySetInnerHTML={{ __html: config.tournaments.notification }} />}
             <TournamentList />
           </div>
         </div>
