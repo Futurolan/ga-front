@@ -65,9 +65,9 @@ class Header extends React.Component {
           }
         default:
           if (item.children) {
-            return this.generateDropDown(<ActiveLink color={item.color} backgroundColor={item.backgroundColor} label={config[item.id].title} className='navbar-link is-uppercase has-text-weight-bold' path={`/${item.id}`} as={config[item.id].link} />, item, index)
+            return this.generateDropDown(<ActiveLink color={item.color} backgroundColor={item.backgroundColor} label={config[item.id].navTitle || config[item.id].title} className='navbar-link is-uppercase has-text-weight-bold' path={`/${item.id}`} as={config[item.id].link} />, item, index)
           } else {
-            return <ActiveLink key={index} color={item.color} backgroundColor={item.backgroundColor} label={config[item.id].title} className='navbar-item is-uppercase has-text-weight-bold' path={`/${item.id}`} as={config[item.id].link} />
+            return <ActiveLink key={index} color={item.color} backgroundColor={item.backgroundColor} label={config[item.id].navTitle || config[item.id].title} className='navbar-item is-uppercase has-text-weight-bold' path={`/${item.id}`} as={config[item.id].link} />
           }
       }
     }
@@ -83,18 +83,18 @@ class Header extends React.Component {
     if (item.type === 'page') {
       if (item.link === undefined || item.id === undefined || item.title === undefined) return null
       if (item.children) {
-        return this.generateDropDown(<ActiveLink color={item.color} backgroundColor={item.backgroundColor} label={item.title} className='navbar-link is-uppercase has-text-weight-bold' as={item.link} path={{ pathname: '/page', query: { nid: item.id } }} />, item, index)
+        return this.generateDropDown(<ActiveLink color={item.color} backgroundColor={item.backgroundColor} label={item.navTitle || item.title} className='navbar-link is-uppercase has-text-weight-bold' as={item.link} path={{ pathname: '/page', query: { nid: item.id } }} />, item, index)
       } else {
-        return <ActiveLink color={item.color} backgroundColor={item.backgroundColor} key={index} label={item.title} className='navbar-item is-uppercase has-text-weight-bold' as={item.link} path={{ pathname: '/page', query: { nid: item.id } }} />
+        return <ActiveLink color={item.color} backgroundColor={item.backgroundColor} key={index} label={item.navTitle || item.title} className='navbar-item is-uppercase has-text-weight-bold' as={item.link} path={{ pathname: '/page', query: { nid: item.id } }} />
       }
     }
 
     if (item.type === 'external') {
       if (item.link === undefined || item.title === undefined) return null
       if (item.children) {
-        return (this.generateDropDown(<a href={item.link} target='_blank' rel='noopener noreferrer' style={{ backgroundColor: `${item.backgroundColor || 'transparent'}`, color: `${item.color || '#FFFFFF'}` }} className='navbar-link is-uppercase has-text-weight-bold'>{item.title}</a>, item, index))
+        return (this.generateDropDown(<a href={item.link} target='_blank' rel='noopener noreferrer' style={{ backgroundColor: `${item.backgroundColor || 'transparent'}`, color: `${item.color || '#FFFFFF'}` }} className='navbar-link is-uppercase has-text-weight-bold' dangerouslySetInnerHTML={{ __html: item.navTitle || item.title }} />, item, index))
       } else {
-        return (<a key={index} href={item.link} target='_blank' rel='noopener noreferrer' style={{ backgroundColor: `${item.backgroundColor || 'transparent'}`, color: `${item.color || '#FFFFFF'}` }} className='navbar-item is-uppercase has-text-weight-bold'>{item.title}</a>)
+        return (<a key={index} href={item.link} target='_blank' rel='noopener noreferrer' style={{ backgroundColor: `${item.backgroundColor || 'transparent'}`, color: `${item.color || '#FFFFFF'}` }} className='navbar-item is-uppercase has-text-weight-bold' dangerouslySetInnerHTML={{ __html: item.navTitle || item.title }} />)
       }
     }
 

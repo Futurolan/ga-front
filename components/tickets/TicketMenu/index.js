@@ -17,7 +17,7 @@ function TicketMenu ({ className, color, backgroundColor, data: { loading, error
   }
 
   if (node && node.url) {
-    return <ActiveLink label={config.tickets.title} color={color} backgroundColor={backgroundColor} className={`ga-ticket-menu ${className}`} as={config.tickets.link} path='/tickets' />
+    return <ActiveLink label={config.tickets.navTitle || config.tickets.title} color={color} backgroundColor={backgroundColor} className={`ga-ticket-menu ${className}`} as={config.tickets.link} path='/tickets' />
   } else { return null }
 }
 
