@@ -36,7 +36,7 @@ const config = {
   },
   tournaments: {
     title: 'Tournois',
-    navTitle: '<img src="https://static.gamers-assembly.net/ga.png" style="max-height:none" width="84">',
+    navTitle: '<img src="/static/img/tournoisga.png" style="max-height:none">',
     description: 'Tous les tournois de la Gamers Assembly 2020',
     notification: '<div class="columns is-vcentered"><div class="column is-1"><img src="https://raw.githubusercontent.com/Futurolan/ga-oes-2020/master/public/static/img/logo_ga_oes.png"></div><div class="column">La Gamers Assembly Occitanie Edition vous propose les tournois suivants ! La Gamers Assembly Occitanie Edition vous propose les tournois suivants ! </div></div>',
     link: '/tournois'
