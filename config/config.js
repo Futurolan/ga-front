@@ -79,7 +79,7 @@ const config = {
   },
   staticTickets: {
     title: 'Billetterie',
-    iframeUrl: 'https://www.weezevent.com/widget_billeterie.php?id_evenement=583841&lg_billetterie=1&code=37023&width_auto=1&v=2&jsintegration=1',
+    iframeUrl: 'https://www.helloasso.com/associations/association-futurolan/formulaires/1/widget',
     description: 'Achetez vos places pour la Gamers Assembly 2020',
     link: '/visiteurs'
   },
