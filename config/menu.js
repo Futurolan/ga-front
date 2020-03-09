@@ -11,6 +11,7 @@ const menu = [
       { type: 'config', backgroundColor: '#f9dc00', color: '#ab080e', id: 'staticTickets' }
     ]
   },
+  { type: 'config', id: 'staticTickets' },
   // { type: 'page', title: 'Pass\'Bar', id: 2822, link: '/passbar' },
   // { type: 'external', title: 'ESL Pro League', color: '#FFFF00', backgroundColor: '#FF0000', link: 'https://pro.eslgaming.com/occitanie/' },
   { type: 'config', id: 'tournaments' },
