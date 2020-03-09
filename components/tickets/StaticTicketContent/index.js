@@ -17,7 +17,7 @@ function StaticTicketContent () {
             <ReactIframeResizer
               iframeResizerOptions={{ checkOrigin: false, log: true }}
               src={config.staticTickets.iframeUrl}
-              style={{ width: '100%', height: 900, minHeight: 20 }}
+              style={{ width: '100%', height: 1100, minHeight: 20 }}
             />
           </div>
         </div>
