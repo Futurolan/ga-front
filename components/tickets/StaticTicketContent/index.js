@@ -12,11 +12,12 @@ function StaticTicketContent () {
       <h1 className='title title-line has-text-centered'><span>{config.staticTickets.title}</span></h1>
       <div className='columns is-multiline'>
         <div className='column is-12 is-12-desktop'>
-          {config.tickets.notification && <div className='notification is-warning' dangerouslySetInnerHTML={{ __html: config.tickets.notification }} />}
+          {config.staticTickets.notification && <div className='notification is-warning' dangerouslySetInnerHTML={{ __html: config.staticTickets.notification }} />}
           <div className='box '>
             <ReactIframeResizer
               iframeResizerOptions={{ checkOrigin: false, log: true }}
               src={config.staticTickets.iframeUrl}
+              style={ width: '100%', height: 900px, minHeight: 20 }
             />
           </div>
         </div>
