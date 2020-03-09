@@ -78,10 +78,10 @@ const config = {
     }
   },
   staticTickets: {
-    title: 'Billetterie',
+    title: 'Dons',
     iframeUrl: 'https://www.helloasso.com/associations/association-futurolan/formulaires/1/widget',
-    description: 'Achetez vos places pour la Gamers Assembly 2020',
-    link: '/visiteurs'
+    description: 'Effectuez un don à l\'association FuturoLAN pour soutenir la Gamers Assembly',
+    link: '/dons'
   },
   exhibitors: {
     title: 'Exposants',
