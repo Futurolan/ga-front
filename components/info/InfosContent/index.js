@@ -19,11 +19,12 @@ function InfosContent ({
     const node = nodeQuery.entities[0]
     return (
       <div className='ga-infos-content'>
-        <iframe
-          width='100%' height='250' frameBorder='0'
-          src={`https://www.google.com/maps/embed/v1/place?q=place_id:${node.placeId}&key=AIzaSyDxn9buXacF0h2mlroZlamJRDIsEIyDxYA`}
-          allowFullScreen=''
-        />
+        {node.placeId &&
+          <iframe
+            width='100%' height='250' frameBorder='0'
+            src={`https://www.google.com/maps/embed/v1/place?q=place_id:${node.placeId}&key=AIzaSyDxn9buXacF0h2mlroZlamJRDIsEIyDxYA`}
+            allowFullScreen=''
+          />}
         <div className='box content'>
           <div dangerouslySetInnerHTML={{ __html: node.description.value }} />
         </div>
