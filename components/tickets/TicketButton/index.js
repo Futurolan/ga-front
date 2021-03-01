@@ -14,23 +14,23 @@ function TicketButton ({ subscribeUrl, data: { loading, error, node } }) {
     return null
   }
 
-  if (node && node.url) {
-    return (
-      <div className='panel ga-ticket-button'>
-        <div className='button is-primary is-fullwidth is-large'>
-          <Link href={config.tickets.link}>
-            <a className='has-text-white'>Accéder à la billetterie</a>
-          </Link>
-        </div>
-      </div>
-    )
-  } else if (subscribeUrl !== null) {
+  if (subscribeUrl !== null) {
     return (
       <div className='panel ga-ticket-button'>
         <div className='button is-primary is-fullwidth is-large'>
           <a className='has-text-white' href={subscribeUrl} target='_blank' rel='noreferrer'>
             Accéder à la billetterie
           </a>
+        </div>
+      </div>
+    )
+  } else if (node && node.url) {
+    return (
+      <div className='panel ga-ticket-button'>
+        <div className='button is-primary is-fullwidth is-large'>
+          <Link href={config.tickets.link}>
+            <a className='has-text-white'>Accéder à la billetterie</a>
+          </Link>
         </div>
       </div>
     )
