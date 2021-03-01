@@ -69,7 +69,7 @@ function TournamentContent ({ changeBg, data: { loading, error, node } }) {
             <WeezeventPlayerList tournamentNid={node.nid.toString()} reservedSlot={node.reservedSlot} size={node.size} />
           </div>
           <div className='column is-4'>
-            <TicketButton />
+            <TicketButton subscribeUrl={node.subscribeUrl} />
             <div className='panel'>
               <p className='panel-heading has-background-primary has-text-white'>
                 <i className='fas fa-ruler' />&nbsp;&nbsp;Format
@@ -193,6 +193,7 @@ export const tournament = gql`
         reservedSlot:fieldTournamentReservedSlot
         size:fieldTournamentSize
         toornamentId:fieldTournamentToornamentId
+        subscribeUrl:fieldTournamentSubscribeUrl
         bgSponsor: fieldTournamentBgSponsor{
           url
         }
