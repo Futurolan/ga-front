@@ -19,7 +19,7 @@ function TicketButton ({ subscribeUrl, data: { loading, error, node } }) {
       <div className='panel ga-ticket-button'>
         <div className='button is-primary is-fullwidth is-large'>
           <a className='has-text-white' href={subscribeUrl} target='_blank' rel='noreferrer'>
-            Accéder à la billetterie
+            S'inscrire au tournoi
           </a>
         </div>
       </div>
